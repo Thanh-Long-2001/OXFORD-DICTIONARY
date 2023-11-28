@@ -60,7 +60,7 @@ public class dictionaryController implements Initializable {
                     setText(null);
                 } else {
                     setText(item);
-                    setFont(Font.font(16)); // Set the font size here
+                    setFont(Font.font(16)); // Set the font size
                 }
             }
         };
@@ -105,10 +105,9 @@ public class dictionaryController implements Initializable {
     @FXML
     public void find(ActionEvent event) {
         String def = trie.getDefinition(search.getText());
-        if(def != null) {
+        if (def != null) {
             definition.getEngine().loadContent(def);
-        }
-        else {
+        } else {
             System.out.println("Word not found.");
         }
     }
@@ -121,8 +120,7 @@ public class dictionaryController implements Initializable {
             search.setText(selectWord);
             def = trie.getDefinition(selectWord);
             definition.getEngine().loadContent(def);// Load HTML content into the WebView
-        }
-        else {
+        } else {
             System.out.println("No words selected.");
         }
 
@@ -146,9 +144,25 @@ public class dictionaryController implements Initializable {
         }
     }
 
+    private boolean checkValid(String e) {
+        for (int i = 0; i < e.length(); i++) {
+            char ch = e.charAt(i);
+            if (Character.isDigit(ch) || ch < 'a' || ch > 'z') {
+                return false;
+            }
+        }
+        return true;
+    }
+
     @FXML
     public void addWord(ActionEvent event) {
         Pair<String, String> newWord = message.addWord();
+
+        if (!checkValid(newWord.getKey())) {
+            message.warning("Warning", "", "Words contain characters that are not allowed.");
+            System.out.println("Words contain characters that are not allowed.");
+            return;
+        }
 
         if (!newWord.getKey().equals("") && !newWord.getValue().equals("")) {
             if (trie.search(newWord.getKey())) {
@@ -172,10 +186,17 @@ public class dictionaryController implements Initializable {
     public void fixWord(ActionEvent event) {
         String oldWord = search.getText();
         String oldMeaning;
+
         if (oldWord != null && !oldWord.isEmpty()) {
             oldMeaning = trie.getDefinition(oldWord);
 
             Pair<String, String> newWord = message.fixWord(oldWord, oldMeaning);
+
+            if (!checkValid(newWord.getKey())) {
+                message.warning("Warning", "", "Words contain characters that are not allowed.");
+                System.out.println("Words contain characters that are not allowed.");
+                return;
+            }
 
             if (!newWord.getKey().equals("") && !newWord.getValue().equals("")) {
                 trie.fixWord(oldWord, newWord.getKey(), newWord.getValue());
@@ -200,7 +221,7 @@ public class dictionaryController implements Initializable {
         String word = search.getText();
         if (word != null && !word.isEmpty()) {
             if (message.deleteWord()) {
-                trie.delete(word);
+                trie.deleteWord(word);
 
                 allWords.remove(word);
                 filteredWords.remove(word);

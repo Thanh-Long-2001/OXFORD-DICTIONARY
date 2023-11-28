@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.web.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
-<HBox fx:id="hBox" prefHeight="750.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphic_version.dictionaryController">
+<HBox fx:id="hBox" prefHeight="750.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphic_version.dictionaryController">
     <children>
-        <AnchorPane minHeight="0.0" prefHeight="750.0" prefWidth="320.0" style="-fx-background-color: #90e88a;" styleClass="column1">
+        <AnchorPane minHeight="0.0" prefHeight="750.0" prefWidth="320.0" style="-fx-background-color: #B2BEB5;" styleClass="column1">
             <children>
-                <TextField fx:id="search" layoutX="16.0" layoutY="6.0" onAction="#search" prefHeight="44.0" prefWidth="236.0" promptText="Tra từ Anh Việt" AnchorPane.rightAnchor="49.0">
+                <TextField fx:id="search" layoutX="15.0" layoutY="9.0" onAction="#search" prefHeight="44.0" prefWidth="236.0" promptText="Tra từ Anh Việt" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="5.0">
                     <font>
                         <Font name="Arial" size="20.0" />
                     </font>
                 </TextField>
-                <ListView fx:id="output" fixedCellSize="40.0" layoutX="15.0" layoutY="61.0" onMouseClicked="#displayDefinition" prefHeight="669.0" prefWidth="260.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="61.0" />
-                <Button layoutX="252.0" layoutY="6.0" mnemonicParsing="false" onAction="#find" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: #c8ff00;">
+                <ListView fx:id="output" fixedCellSize="40.0" layoutX="15.0" layoutY="56.0" onMouseClicked="#displayDefinition" prefHeight="674.0" prefWidth="283.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="56.0" />
+                <Button layoutX="252.0" layoutY="6.0" mnemonicParsing="false" onAction="#find" prefHeight="42.0" prefWidth="42.0" style="-fx-background-color: #808A87;" AnchorPane.topAnchor="6.0">
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -28,9 +34,9 @@
                 </Button>
             </children>
         </AnchorPane>
-        <AnchorPane fx:id="acp" minHeight="0.0" prefHeight="160.0" prefWidth="618.0" style="-fx-background-color: #90e88a;" styleClass="column2">
+        <AnchorPane fx:id="acp" minHeight="0.0" prefHeight="160.0" prefWidth="618.0" style="-fx-background-color: #B2BEB5;" styleClass="column2">
             <children>
-                <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="21.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="14.0">
+                <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="14.0">
                     <image>
                         <Image url="@../images/definition_sb.png" />
                     </image>
@@ -41,10 +47,10 @@
                     </font>
                 </Label>
 
-                <WebView fx:id="definition" layoutX="21.0" layoutY="55.0" prefHeight="618.0" prefWidth="51.0" style="-fx-background-color: blue;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="62.0" />
-                <VBox layoutX="407.0" layoutY="681.0" prefHeight="165.0" prefWidth="50.0" AnchorPane.bottomAnchor="530.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="62.0">
+                <WebView fx:id="definition" layoutX="21.0" layoutY="56.0" prefHeight="674.0" prefWidth="540.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="56.0" />
+                <VBox layoutX="560.0" layoutY="55.0" prefHeight="165.0" prefWidth="50.0" AnchorPane.bottomAnchor="537.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="55.0">
                     <children>
-                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addWord" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: #15cc17;">
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#addWord" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: #B2BEB5;">
                             <graphic>
                                 <ImageView fitHeight="41.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -52,13 +58,14 @@
                                     </image>
                                 </ImageView>
                             </graphic>
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="Calibri Bold" size="12.0" />
-                     </font></Button>
-                        <Button fx:id="fixButton" mnemonicParsing="false" onAction="#fixWord" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: #f7ff00;">
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font name="Calibri Bold" size="12.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="fixButton" mnemonicParsing="false" onAction="#fixWord" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: #B2BEB5;">
                             <graphic>
                                 <ImageView fitHeight="41.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -66,21 +73,22 @@
                                     </image>
                                 </ImageView>
                             </graphic>
-                     <VBox.margin>
-                        <Insets bottom="5.0" />
-                     </VBox.margin>
+                            <VBox.margin>
+                                <Insets bottom="5.0" />
+                            </VBox.margin>
                         </Button>
-                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteWord" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: #ff004d;">
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteWord" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: #B2BEB5;">
                             <graphic>
                                 <ImageView fitHeight="41.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../images/remove_sb.png" />
                                     </image>
                                 </ImageView>
-                            </graphic></Button>
+                            </graphic>
+                        </Button>
                     </children>
                 </VBox>
-                <Button fx:id="speak" layoutX="533.0" layoutY="8.0" mnemonicParsing="false" onAction="#pronounce" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: #c8ff00;" AnchorPane.bottomAnchor="693.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="8.0">
+                <Button fx:id="speak" layoutX="504.0" layoutY="56.0" mnemonicParsing="false" onAction="#pronounce" prefHeight="50.0" prefWidth="55.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="644.8" AnchorPane.leftAnchor="504.0" AnchorPane.rightAnchor="65.60000000000002" AnchorPane.topAnchor="56.0">
                     <graphic>
                         <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                             <image>

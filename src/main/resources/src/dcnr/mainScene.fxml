@@ -18,14 +18,14 @@
                         <fx:include source="translate.fxml" />
                     </content>
                 </Tab>
-                <Tab fx:id="tabGame" text="Game">
+                <Tab fx:id="tabQuiz" text="Quiz">
                     <content>
-                        <fx:include source="game.fxml" />
+                        <fx:include source="quiz.fxml" />
                     </content>
                 </Tab>
-                <Tab fx:id="tabSetting" text="Setting">
+                <Tab fx:id="tabHM" text="HangMan">
                     <content>
-                        <fx:include source="setting.fxml" />
+                        <fx:include source="hangman.fxml" />
                     </content>
                 </Tab>
             </tabs>

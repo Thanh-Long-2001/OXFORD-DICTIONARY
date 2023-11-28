@@ -10,7 +10,7 @@ class TrieNode {
     private String word;
     private String meaning;
 
-    TrieNode() {
+    public TrieNode() {
         for (int i = 0; i < apb; i++) {
             trieNode[i] = null;
         }
@@ -104,14 +104,42 @@ public class Trie {
     }
 
     public void fixWord(String before, String after, String afterMeaning) {
-        delete(before);
+        deleteWord(before);
         insert(after, afterMeaning);
     }
 
-    public void delete(String word) {
+    public void deleteWord(String word) {
         if (search(word)) {
-            delete(root, word, 0);
+            deleteWord(root, word, 0);
         }
+    }
+
+    private boolean deleteWord(TrieNode node, String word, int depth) {
+        if (depth == word.length()) {
+            if (node.isEnd() == 1) {
+                node.setEnd(0);
+                node.setWord("");
+                node.setMeaning("");
+            }
+
+            return isEmpty(node);
+        }
+
+        int index = word.charAt(depth) - 'a';
+        if (index == -65) index = 26;
+        else if (index == -52) index = 27;
+        TrieNode child = node.getTrieNode()[index];
+        if (child == null) {
+            return false;
+        }
+
+        boolean deleteChild = deleteWord(child, word, depth + 1);
+        if (deleteChild) {
+            node.getTrieNode()[index] = null;
+            return isEmpty(node);
+        }
+
+        return false;
     }
 
     public List<String> getAllWords() {
@@ -143,7 +171,7 @@ public class Trie {
                 findWordsFromNode(prefixNode, prefix, words);
             }
         } catch (Exception e) {
-            System.out.println(e.toString());
+            //System.out.println("Words contain characters that are not allowed.");
         }
 
         return words;
@@ -162,7 +190,7 @@ public class Trie {
                     return null;
                 }
             } catch (Exception e) {
-                System.out.println(e.toString());
+                System.out.println("Words contain characters that are not allowed.");
             }
             current = current.getTrieNode()[index];
         }
@@ -188,34 +216,6 @@ public class Trie {
                 findWordsFromNode(child, prefix + z, words);
             }
         }
-    }
-
-    private boolean delete(TrieNode node, String word, int depth) {
-        if (depth == word.length()) {
-            if (node.isEnd() == 1) {
-                node.setEnd(0);
-                node.setWord("");
-                node.setMeaning("");
-            }
-
-            return isEmpty(node);
-        }
-
-        int index = word.charAt(depth) - 'a';
-        if (index == -65) index = 26;
-        else if (index == -52) index = 27;
-        TrieNode child = node.getTrieNode()[index];
-        if (child == null) {
-            return false;
-        }
-
-        boolean deleteChild = delete(child, word, depth + 1);
-        if (deleteChild) {
-            node.getTrieNode()[index] = null;
-            return isEmpty(node);
-        }
-
-        return false;
     }
 
     private boolean isEmpty(TrieNode node) { // helper to check if a node has no trieNode(children)
@@ -250,5 +250,4 @@ public class Trie {
             return null; // Word not found in the Trie
         }
     }
-
 }

@@ -8,4 +8,4 @@ breaking load 	tải trọng phá hủy
 Breaking strength 	Giới hạn bền, sức chống phá huỷ
 breaking test	sự thử đứt; sự thử gãy 
 breast beam 	tấm tì ngực; (đường sắt) thanh chống va, 
-breeze concrete 	bê tông bụi than cốc 
+breeze concrete 	bê tông bụi than cốc

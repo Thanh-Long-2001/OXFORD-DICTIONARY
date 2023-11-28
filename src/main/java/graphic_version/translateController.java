@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -63,10 +64,10 @@ public class translateController implements Initializable {
         resetStyleLangFrom();
         langFromSecond.getStyleClass().add("active");
 
-            languageFrom = "en";
-            text1.setText("Tiếng Anh");
-            nameFrom = "Linda";
-            speakFrom = "en-gb";
+        languageFrom = "en";
+        text1.setText("Tiếng Anh");
+        nameFrom = "Linda";
+        speakFrom = "en-gb";
     }
 
     @FXML
@@ -74,10 +75,10 @@ public class translateController implements Initializable {
         resetStyleLangFrom();
         langFromThird.getStyleClass().add("active");
 
-            text1.setText("Tiếng Việt");
-            languageFrom = "vi";
-            nameFrom = "Chi";
-            speakFrom = "vi-vn";
+        text1.setText("Tiếng Việt");
+        languageFrom = "vi";
+        nameFrom = "Chi";
+        speakFrom = "vi-vn";
 
     }
 

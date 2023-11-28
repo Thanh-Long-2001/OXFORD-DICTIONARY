@@ -99,19 +99,19 @@ public class Dictionary extends Word {
     }
 
     public void importF() throws IOException {
-        FileReader reader = new FileReader("src/main/java/cmd_version/wordd.txt") ;
-        String ip_word_target ;
-        String ip_word_explain ;
-        Scanner sc = new Scanner(reader) ;
+        FileReader reader = new FileReader("src/main/java/cmd_version/wordd.txt");
+        String ip_word_target;
+        String ip_word_explain;
+        Scanner sc = new Scanner(reader);
 
-        while(sc.hasNextLine()){
-            String w = sc.nextLine() ;
-            ip_word_target = w.split("\t")[0] ;
-            ip_word_explain = w.split("\t")[1] ;
-            Word ip = new Word(ip_word_target,ip_word_explain);
-            addd(ip) ;
+        while (sc.hasNextLine()) {
+            String w = sc.nextLine();
+            ip_word_target = w.split("\t")[0];
+            ip_word_explain = w.split("\t")[1];
+            Word ip = new Word(ip_word_target, ip_word_explain);
+            addd(ip);
         }
-        sc.close() ;
+        sc.close();
     }
 
     public void exportF() throws IOException {

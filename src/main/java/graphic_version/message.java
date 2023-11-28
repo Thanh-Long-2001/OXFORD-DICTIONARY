@@ -64,7 +64,7 @@ public class message {
         }
     }
 
-    public static Pair<String,String> fixWord(String word , String meaning) {
+    public static Pair<String, String> fixWord(String word, String meaning) {
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Fix");
         dialog.setHeaderText("");

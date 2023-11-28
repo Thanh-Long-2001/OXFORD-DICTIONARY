@@ -5,62 +5,62 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ap" prefHeight="750.0" prefWidth="900.0" style="-fx-background-color: #f6e58d;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphic_version.quizController">
+<AnchorPane fx:id="ap" prefHeight="750.0" prefWidth="900.0" style="-fx-background-color: #B2BEB5;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphic_version.quizController">
    <children>
-      <Label layoutX="345.0" layoutY="14.0" text="QUIZ">
+      <Label layoutX="365.0" layoutY="26.0" text="QUIZ">
          <font>
-            <Font name="Ink Free" size="73.0" />
+            <Font name="Sitka Small" size="73.0" />
          </font>
       </Label>
-      <Label fx:id="question" alignment="CENTER" layoutX="-1.0" layoutY="110.0" prefHeight="130.0" prefWidth="917.0" text="Label">
+      <Label fx:id="question" alignment="CENTER" layoutY="110.0" prefHeight="130.0" prefWidth="917.0" text="WELCOME">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="bA" layoutX="32.0" layoutY="246.0" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="98.0" prefWidth="98.0" text="A">
          <font>
             <Font size="40.0" />
          </font>
-      </Label>
-      <Button fx:id="bA" layoutX="1.0" layoutY="240.0" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="110.0" prefWidth="110.0" text="A">
+      </Button>
+      <Button fx:id="bB" layoutX="32.0" layoutY="356.0" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="98.0" prefWidth="98.0" text="B">
          <font>
-            <Font name="Maiandra GD" size="55.0" />
+            <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="bB" layoutX="1.0" layoutY="350.0" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="110.0" prefWidth="110.0" text="B">
+      <Button fx:id="bC" layoutX="32.0" layoutY="466.0" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="98.0" prefWidth="98.0" text="C">
          <font>
-            <Font name="Maiandra GD" size="55.0" />
+            <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="bC" layoutX="1.0" layoutY="460.0" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="110.0" prefWidth="110.0" text="C">
+      <Button fx:id="bD" layoutX="32.0" layoutY="583.0" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="98.0" prefWidth="98.0" text="D">
          <font>
-            <Font name="Maiandra GD" size="55.0" />
+            <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="bD" layoutX="1.0" layoutY="570.0" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="110.0" prefWidth="110.0" text="D">
-         <font>
-            <Font name="Maiandra GD" size="52.0" />
-         </font>
-      </Button>
-      <Label fx:id="optA" layoutX="171.0" layoutY="240.0" prefHeight="110.0" prefWidth="731.0" text="Label">
+      <Label fx:id="optA" layoutX="171.0" layoutY="240.0" prefHeight="110.0" prefWidth="731.0">
          <font>
             <Font size="30.0" />
          </font></Label>
-      <Label fx:id="optB" layoutX="171.0" layoutY="350.0" prefHeight="110.0" prefWidth="731.0" text="Label">
+      <Label fx:id="optB" layoutX="171.0" layoutY="350.0" prefHeight="110.0" prefWidth="731.0">
          <font>
             <Font size="30.0" />
          </font></Label>
-      <Label fx:id="optC" layoutX="171.0" layoutY="460.0" prefHeight="110.0" prefWidth="731.0" text="Label">
+      <Label fx:id="optC" layoutX="171.0" layoutY="460.0" prefHeight="110.0" prefWidth="731.0">
          <font>
             <Font size="30.0" />
          </font></Label>
-      <Label fx:id="optD" layoutX="171.0" layoutY="570.0" prefHeight="110.0" prefWidth="731.0" text="Label">
+      <Label fx:id="optD" layoutX="171.0" layoutY="577.0" prefHeight="110.0" prefWidth="731.0">
          <font>
             <Font size="30.0" />
          </font></Label>
-      <Label fx:id="seconds_left" alignment="CENTER" contentDisplay="CENTER" layoutX="792.0" layoutY="625.0" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: #f1c40f;" text="10">
+      <Label fx:id="seconds_left" alignment="CENTER" contentDisplay="CENTER" layoutX="792.0" layoutY="625.0" prefHeight="110.0" prefWidth="110.0" style="-fx-background-color: #f1c40f;" text="10" textAlignment="CENTER">
          <font>
             <Font name="Imprint MT Shadow" size="72.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="807.0" layoutY="593.0" prefHeight="32.0" prefWidth="80.0" text="Time :3">
+      <Label alignment="CENTER" layoutX="807.0" layoutY="594.0" prefHeight="32.0" prefWidth="80.0" text="Time ">
          <font>
-            <Font name="Ink Free" size="20.0" />
+            <Font name="Arial" size="20.0" />
          </font>
       </Label>
       <Label fx:id="correctGuess" alignment="CENTER" layoutX="321.0" layoutY="240.0" prefHeight="130.0" prefWidth="309.0" style="-fx-background-color: #f1c40f;" text="5/5" visible="false">
@@ -73,9 +73,9 @@
             <Font name="Cambria Math" size="30.0" />
          </font>
       </Label>
-      <Button layoutX="32.0" layoutY="25.0" mnemonicParsing="false" onAction="#switchBack" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #70a1ff; -fx-background-radius: 45;" text="Back" textFill="WHITE">
+      <Button fx:id="playB" layoutX="380.0" layoutY="569.0" mnemonicParsing="false" onAction="#startGame" prefHeight="83.0" prefWidth="191.0" style="-fx-background-color: #f1c40f;" text="PLAY">
          <font>
-            <Font size="11.0" />
+            <Font name="System Bold Italic" size="23.0" />
          </font>
       </Button>
    </children>
