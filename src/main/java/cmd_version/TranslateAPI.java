@@ -26,7 +26,7 @@ public class TranslateAPI {
     }
 
     public static void main(String[] args) throws IOException {
-        String text = "simp";
-        System.out.println("Translated text: \n" + googleTranslate("", "ja", text));
+        // String text = "simp";
+        // System.out.println("Translated text: \n" + googleTranslate("", "ja", text));
     }
 }
